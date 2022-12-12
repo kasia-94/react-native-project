@@ -58,6 +58,7 @@ const RegistrationScreen = () => {
       return;
     }
     setIsShowKeyboard(false);
+    Keyboard.dismiss();
     setState(initialState);
   };
 

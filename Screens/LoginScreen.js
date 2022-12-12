@@ -58,6 +58,7 @@ const LoginScreen = () => {
       return;
     }
     setIsShowKeyboard(false);
+    Keyboard.dismiss();
     setState(initialState);
   };
 
