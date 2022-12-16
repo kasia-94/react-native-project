@@ -14,7 +14,7 @@ import {
   Image,
 } from "react-native";
 
-const RegistrationScreen = () => {
+const RegistrationScreen = ({ navigation }) => {
   const initialState = {
     login: "",
     email: "",
@@ -66,7 +66,7 @@ const RegistrationScreen = () => {
     <TouchableWithoutFeedback onPress={keyboardHide}>
       <View style={styles.container}>
         <ImageBackground
-          source={require("../assets/background.png")}
+          source={require("../../../src/assets/background.png")}
           style={styles.image}
         >
           <KeyboardAvoidingView
@@ -80,7 +80,7 @@ const RegistrationScreen = () => {
             >
               <View style={styles.photoAdd}>
                 <TouchableOpacity style={styles.buttonAdd}>
-                  <Image source={require("../assets/add.png")} />
+                  <Image source={require("../../../src/assets/add.png")} />
                 </TouchableOpacity>
               </View>
 
@@ -147,7 +147,7 @@ const RegistrationScreen = () => {
                 </TouchableOpacity>
               </View>
               <View style={styles.box}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("Login")}>
                   <Text style={styles.textBtnBottom}>
                     Do you have an account? Sign in
                   </Text>

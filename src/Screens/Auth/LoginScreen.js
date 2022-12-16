@@ -11,10 +11,9 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
   Dimensions,
-  Image,
 } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const initialState = {
     login: "",
     email: "",
@@ -66,7 +65,7 @@ const LoginScreen = () => {
     <TouchableWithoutFeedback onPress={keyboardHide}>
       <View style={styles.container}>
         <ImageBackground
-          source={require("../assets/background.png")}
+          source={require("../../../src/assets/background.png")}
           style={styles.image}
         >
           <KeyboardAvoidingView
@@ -125,7 +124,9 @@ const LoginScreen = () => {
                 </TouchableOpacity>
               </View>
               <View style={styles.box}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("Register")}
+                >
                   <Text style={styles.textBtnBottom}>
                     Don't have an account? Register
                   </Text>
