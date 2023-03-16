@@ -60,6 +60,7 @@ const RegistrationScreen = ({ navigation }) => {
     setIsShowKeyboard(false);
     Keyboard.dismiss();
     setState(initialState);
+    navigation.navigate("Home");
   };
 
   return (

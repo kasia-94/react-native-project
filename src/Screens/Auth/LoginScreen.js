@@ -15,12 +15,10 @@ import {
 
 const LoginScreen = ({ navigation }) => {
   const initialState = {
-    login: "",
     email: "",
     password: "",
   };
   const initialStateOnFocus = {
-    login: false,
     email: false,
     password: false,
   };
@@ -53,12 +51,13 @@ const LoginScreen = ({ navigation }) => {
   };
 
   const onSubmit = () => {
-    if (state.login === "" || state.email === "" || state.password === "") {
+    if (state.email === "" || state.password === "") {
       return;
     }
     setIsShowKeyboard(false);
     Keyboard.dismiss();
     setState(initialState);
+    navigation.navigate("Home");
   };
 
   return (
